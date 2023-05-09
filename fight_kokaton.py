@@ -94,6 +94,7 @@ class Bomb:
         self._rct.center = random.randint(0, WIDTH), random.randint(0, HEIGHT)
         self._vx, self._vy = +1, +1
 
+
     def update(self, screen: pg.Surface):
         """
         爆弾を速度ベクトルself._vx, self._vyに基づき移動させる
@@ -159,7 +160,10 @@ def main():
             if bomb is not None and beam._rct.colliderect(bomb._rct):
                 beam=None
                 bomb=None
-        pg.display.update()
+                bird.change_img(6,(screen))
+                pg.display.update()
+                time.sleep(1)
+        pg.display.update()  
         clock.tick(1000)
 
 
