@@ -146,8 +146,12 @@ class Beam:
 
 
 class Score:
+    """
+    何個の爆弾を撃ち落としたか表示する
+    """
     def __init__(self):
         self.score=0
+
     def update(self,screen):
         self.txt=pg.font.Font(None,80).render(str(self.score),True,(0,0,0))    
         screen.blit(self.txt,[100,100])
@@ -165,6 +169,7 @@ def main():
     scr=Score()
 
     tmr = 0
+
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
